@@ -1,0 +1,9 @@
+conda_env: conda.yml
+
+entry_points:
+  main:
+    command: python main.py --learning_rate {learning_rate} --n_estimators {n_estimators} --dropout {dropout}
+    parameters:
+      layers: {type: int, default: 3}
+      neurons: {type: int, default: 128}
+	 dropout: {type: float, default: 0.1}
