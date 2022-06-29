@@ -1,8 +1,8 @@
 import click
 import mlflow
-import tensorflow as tf
 import numpy as np
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
+from sklearn.ensemble import GradientBoostingRegressor
 
 # Metrics we will plot to evaluate
 def eval_metrics(actual, pred):
