@@ -1,5 +1,6 @@
 import click
 import mlflow
+import mlflow.sklearn
 import numpy as np
 import tensorflow as tf
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
@@ -46,6 +47,9 @@ def main(learning_rate, n_estimators, max_depth):
     mlflow.log_metric("rmse", rmse_test)
     mlflow.log_metric("mae", mae_test)
     mlflow.log_metric("r2", r2_test)
+    
+    # Log the model
+    mlflow.sklearn.log_model(model, "model")
 
 if __name__ == "__main__":
     main()
