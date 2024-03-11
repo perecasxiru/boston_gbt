@@ -18,6 +18,7 @@ def eval_metrics(actual, pred):
 @click.option("--n_estimators", default=100)
 @click.option("--max_depth", default=3)
 def main(learning_rate, n_estimators, max_depth):
+    print('Starting')
     (x_train, y_train), (x_test, y_test) = tf.keras.datasets.boston_housing.load_data(
         path="boston_housing.npz", test_split=0.2, seed=113
     )
